@@ -15,3 +15,8 @@
 
 * Create the log in/join functionality, so that we can persist users and their data
 
+<!-- Talking code questions and answers here can be used for seeds. -->
+<!-- https://github.com/learn-co-students/hayk-talking-code/blob/master/questions.md -->
+<!-- https://github.com/learn-co-students/hayk-talking-code/blob/master/answers.md -->
+<!-- Was maybe thinking of giving the official answers a special identifier so we can place a higher importance on them? -->
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Question</title>
+        <link rel="stylesheet" href="main.css">
+        <script defer src="question.js"></script>
+    </head>
+    <body>
+        <div>
+            <main>
+                <header id="question-container"></header>
+                <div>
+                    <form id="create-answer" method="POST" action="http://localhost:3000/answers">
+                        <input type="text" name="text_answer" placeholder="Write your answer here">
+                        <input type="submit" value="Submit Answer">
+                    </form>
+                    <div class="link-container">
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
