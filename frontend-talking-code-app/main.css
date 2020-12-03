@@ -57,7 +57,7 @@ html, body {
 body {
     background-color: #f2f2f2;
     color: #191c1f;
-    font-family: "helvetica neue", helvetica, arial, verdana, sans-serif;
+    font-family: courier, monospace;
 }
 
 /* Layout */
@@ -75,7 +75,6 @@ header { margin-bottom: 1em; }
 /* Typography */
 
 h1 { 
-    font-family: avenir, "helvetica-neue", helvetica, arial, sans-serif;
     font-size: 2em; /* 32px */
     font-weight: 500;
     letter-spacing: 2px;
