@@ -15,3 +15,21 @@
 
 * Create the log in/join functionality, so that we can persist users and their data
 
+## Users
+* Attributes:
+    * Name
+    * Cohort
+    * Contact info
+    * Personal site
+
+## Questions
+* Attributes:
+    * Content (the copy, or the question, itself)
+* has_many answers
+
+## Answers
+* Attributes:
+    * User
+    * Content
+* belongs_to a question
+
