@@ -55,22 +55,48 @@ html, body {
 }
 
 body {
-    background-color: #f2f2f2;
+    background-color: #191c1f;
     color: #191c1f;
     font-family: courier, monospace;
 }
 
 /* Layout */
 
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	padding: 0.5em 0;
+	background-color: #fff;
+}
+
+#main-nav { 
+	float: left; 
+	margin-left: 16px;
+}
+
+#main-nav li { 
+	display: inline;
+	margin-left: 16px;
+}
+
+#log-in { 
+	float: right;
+	margin-right: 16px; 
+}
+
 #page-wrap {
 	width: 960px;
 	height: 100%;
-	margin: 1em 16px;
+	margin: 3em 16px 1em 16px;
 	padding: 1em 16px;
 	background-color: #fff;
 }
 
 header { margin-bottom: 1em; }
+
+.clear { clear: both; }
 
 /* Typography */
 
@@ -87,3 +113,10 @@ section p {
 }
 
 /* Link styles */
+
+#main-nav li a {
+	color: #191c1f;
+	text-decoration: none;
+}
+
+#main-nav li a:hover { color: red; }
