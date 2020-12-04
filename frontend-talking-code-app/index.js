@@ -12,7 +12,7 @@ fetch(questionURL)
             console.log(question)
             const $questionText = document.createElement('li')
 
-            $questionText.innerHTML = `<a href='question.html?id=${question.id}'>${question.question_text}</a>`
+            $questionText.innerHTML = `<a href='question.html?id=${question.id}'>${question.text}</a>`
 
             $questionContainer.append($questionText)
         })

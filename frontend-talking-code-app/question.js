@@ -3,7 +3,7 @@ const id = searchParams.get('id')
 
 const baseURL = 'http://localhost:3000/'
 const questionURL = `${baseURL}` + 'questions/'
-const answersURL = `${baseURL}` + 'answers/'
+const responsesURL = `${baseURL}` + 'responses/'
 
 const questionContainer = document.querySelector('#question-container')
 const answerForm = document.querySelector('#create-answer')
@@ -12,22 +12,42 @@ fetch(`${questionURL}${id}`)
     .then(result => {
         const question = result.question
         const $questionText = document.createElement('p')
-        $questionText.textContent = question.question_text
+        $questionText.textContent = question.text
         questionContainer.append($questionText)
         console.log(question)
     })
 
 
 const linkContainer = document.querySelector('.link-container')
-const linkButton = document.querySelector('to-answers')
+const responseText = document.querySelector('#response-text')
+
 
 answerForm.addEventListener('submit', (event)=> {
     event.preventDefault()
-    createToAnswers()
+    console.log(responseText.value)
+    createResponse()
+
+    
+    // displayResponses()
+
+        //displayDefaultResponse()
+        //displayUserRespons()
+        //displayAllOtherResponses()
+
+    // updateResponse
+    // destroResponse
 })
 
-function createToAnswers() {
-    const $toAnswer = document.createElement('p')
-    $toAnswer.innerHTML = `<a href='answer.html'>Check answers</a>`
-    linkContainer.append($toAnswer)
+function createResponse() {
+    fetch(responsesURL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(responseText.value)
+        }
+    )
+    .then(response => response.json())
+    .then(console.log)
 }
+    
+    
+
