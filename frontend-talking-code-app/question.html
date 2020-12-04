@@ -7,25 +7,30 @@
         <script defer src="question.js"></script>
     </head>
     <body>
+    <header>
+        <h1><a id="home" href="/index.html">Talking Code</a></h1>
         <nav>
-            <ul id="main-nav">
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/questions.html">Questions</a></li>
-                <li><a href="/question.html">Question</a></li>
-                <li><a href="/answer.html">Answer</a></li>
+            <ul id="nav-list">
+                <li><a href="/daily-question.html">Daily Question</a></li>
+                <li><a href="/featured-questions.html">Featured Questions</a></li>
+                <li><a href="/featured-responses.html">Featured Responses</a></li>
+                <!-- <li><a href="/question.html">Question</a></li>
+                <li><a href="/answer.html">Answer</a></li> -->
+                <li><a href="/categories.html">Categories</a></li>
                 <li><a href="/contact.html">Contact</a></li>
             </ul>
-            <div id="log-in">
-                <button>Log-in/Join</button>
-            </div>
-            <div class="clear"></div> <!-- /.clear -->
         </nav>
+        <!-- <div id="log-in">
+            <button>Log-in</button>
+            <button>Join</button>
+        </div> -->
+    </header>
         <div id="page-wrap">
             <main>
-                <header id="question-container"></header>
+                <h2 id="question-container"></h2>
                 <div>
-                    <form id="create-answer" method="POST" action="http://localhost:3000/answers">
-                        <input type="text" name="text_answer" placeholder="Write your answer here">
+                    <form id="create-answer" method="POST" action="http://localhost:3000/responses">
+                        <input type="text" name="text" id="response-text" placeholder="Write your answer here">
                         <input type="submit" value="Submit Answer">
                     </form>
                     <div class="link-container">
