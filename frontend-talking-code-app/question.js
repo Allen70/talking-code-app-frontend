@@ -7,6 +7,10 @@ const responsesURL = `${baseURL}` + 'responses/'
 
 const questionContainer = document.querySelector('#question-container')
 const answerForm = document.querySelector('#create-answer')
+const linkContainer = document.querySelector('.link-container')
+const responseText = document.querySelector('#response-text')
+
+
 fetch(`${questionURL}${id}`)
     .then(response => response.json())
     .then(result => {
@@ -14,40 +18,44 @@ fetch(`${questionURL}${id}`)
         const $questionText = document.createElement('p')
         $questionText.textContent = question.text
         questionContainer.append($questionText)
-        console.log(question)
+
+        answerForm.addEventListener('submit', (event)=> {
+            event.preventDefault()
+            createResponse()
+            
+            // createSmartResponse()
+            
+            // displayResponses()
+
+                //displayDefaultResponse()
+                //displayUserRespons()
+                //displayAllOtherResponses()
+
+            // updateResponse
+            // destroResponse
+        })
+
     })
 
 
-const linkContainer = document.querySelector('.link-container')
-const responseText = document.querySelector('#response-text')
 
-
-answerForm.addEventListener('submit', (event)=> {
-    event.preventDefault()
-    console.log(responseText.value)
-    createResponse()
-
+    function createResponse() {
+                fetch(responsesURL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        text: responseText.value
+                    })
+                    }
+                ).then(response => response.json())
+                .then(result => {
+                const responseId = result.response.id
+                displayResponses()
     
-    // displayResponses()
-
-        //displayDefaultResponse()
-        //displayUserRespons()
-        //displayAllOtherResponses()
-
-    // updateResponse
-    // destroResponse
-})
-
-function createResponse() {
-    fetch(responsesURL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(responseText.value)
-        }
-    )
-    .then(response => response.json())
-    .then(console.log)
+    function displayResponses() {
+    window.location.href = `http://localhost:3001/responses.html?id=${id}&responseid=${responseId}`
+                }})
 }
-    
-    
+
+
 
