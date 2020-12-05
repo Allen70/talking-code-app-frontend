@@ -24,8 +24,7 @@ fetch(`${questionURL}${id}`)
             createResponse()
             
             // createSmartResponse()
-            
-            // displayResponses()
+        
 
                 //displayDefaultResponse()
                 //displayUserRespons()
@@ -34,10 +33,7 @@ fetch(`${questionURL}${id}`)
             // updateResponse
             // destroResponse
         })
-
     })
-
-
 
     function createResponse() {
                 fetch(responsesURL, {
@@ -56,6 +52,3 @@ fetch(`${questionURL}${id}`)
     window.location.href = `http://localhost:3001/responses.html?id=${id}&responseid=${responseId}`
                 }})
 }
-
-
-
