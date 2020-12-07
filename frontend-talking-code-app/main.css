@@ -29,7 +29,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	/* line-height: 1; */
+	line-height: 1em;
 }
 ol, ul {
 	list-style: none;
@@ -47,123 +48,247 @@ table {
 	border-spacing: 0;
 }
 
-/* - - - - - - - - - - - -
+/* - - - - - - - - - - - - - - - - - -
 	Global styles
-- - - - - - - - - */
+- - - - - - - - - - - - - - - */
 
 html, body {
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
-body {
-    background-color: #fff;
-    color: #191c1f;
-    font-family: "helvetica neue", helvetica, arial, verdana, sans-serif;
+body { 
+	background-color: #fff;
+	color: #191c1f;
+	font-family: "helvetica neue", helvetica, arial, verdana, sans-serif;
 }
 
-/* - - - - - - - - - - - -
-	Layout 
-- - - - - - - - - */
+/* - - - - - - - - - - - - - - - - - -
+	Layout
+- - - - - - - - - - - - - - - */
 
 header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	min-width: 100%;
-	padding: 2em 48px;
+	position: fixed; 
+	top: 0; 
+	left: 0; 
+	min-width: 100%; 
+	padding: 0.5em 0;
 	background-color: #fff;
-	border-bottom: 1px solid #B5B7B4;	
 }
 
-h1 { margin-bottom: 0.125em; }
-
-/* nav {
-	
+nav { 
+	float: left;
+	margin: 0 0 0 24px;
 }
-
-#nav-list { 
-
-} */
 
 #nav-list li { 
 	display: inline;
+	margin: 0 24px 0 0; 
+}
+
+#social-media { 
+	float: right; 
 	margin-right: 16px;
 }
 
-/* #log-in { 
+#social-media a { 
+	margin-right: 8px;
+	padding: 0 8px; 
+}
 
+#page-wrap { 
+	margin: 3.5em 16px 0 24px;
+	min-height: 100%;
+	/* width: 976px; */
+}
+
+#side-bar { 
+	float: left;
+	width: 248px;
+	padding: 0.5em 8px 0.5em 8px;
+}
+
+#content {
+	float: left;
+	width: 696px;
+	padding: 0.5em 8px 0 8px;
+}
+
+h1 { margin-bottom: 0.5em; }
+
+h2, h3 { margin-bottom: 0.5em; }
+
+#side-bar ul { margin-bottom: 0.5em; }
+
+#side-bar ul li { margin-bottom: 0.5em; }
+
+section { margin-bottom: 0.5em; }
+
+/* p.date { margin: -1.5em 0.125em 0 0; } */
+
+/* #content ul.left, #content ul.right { 
+	float: left; 
+	width: 344px;
 } */
 
-#page-wrap {
-	width: 928px;
-	height: 100%;
-	margin: 9.5em 48px 2em 48px;
-	padding: 1em 0;
-	background-color: #fff;
-}
+/* #content ul.left { margin-right: 8px; } */
 
-h2 {
-	margin-bottom: 1em;
-	font-weight: 500;
-	font-size: 1em;
-	letter-spacing: 0.75px;
-}
-
-#create-answer {
-	width: 500px;
-	height: 500px;
-}
-
-#create-answer input {
-	display: block;
-}
-
-#response-text {
-	width: 100%;
-	height: 250px;
-	padding: 0;
-	border: 1px solid #DCDCDC;
-}
+/* - - - - - - - - - - - - */
 
 .clear { clear: both; }
 
-/* - - - - - - - - - - - -
+/* - - - - - - - - - - - - - - - - - -
 	Typography
-- - - - - - - - - */
+- - - - - - - - - - - - - - - */
 
-h1 { 
-    font-size: 4em;
-    font-weight: 600;
-	letter-spacing: 1px;
-	text-transform: uppercase;
+#site-name {
+    font-family: avenir, "helvetica neue", helvetica, arial, verdana, sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-#nav-list li {
-	font-family: Georgia, 'Times New Roman', Times, serif;
-	font-size: 0.875em;
-	text-transform: uppercase;
-}
-
-section p {
-	color: #6C6F70;
-	font-size: 0.75em; /* 12px */
+#nav-list li { 
+	font-size: 0.8125em;
 	letter-spacing: 0.5px;
-	line-height: 1.5em;
 }
 
-/* - - - - - - - - - - - -
-	Link styles 
-- - - - - - - - - */
-
-h1 a {
-	color: #191c1f;
-	text-decoration: none;
+#social-media a { 
+	font-family: avenir, "helvetica neue", helvetica, arial, verdana, sans-serif;
+	font-size: 1em;
+	font-weight: 500; 
 }
 
-#nav-list li a {
-	color: #575A5D;
-	text-decoration: none;
+h1 {
+	/* color: #fff; */
+	font-family: avenir, "helvetica neue", helvetica, arial, verdana, sans-serif;
+	font-size: 0.9375em; 
+	font-weight: 600;
+	letter-spacing: 2px;
+	text-transform: uppercase;
 }
 
-#nav-list li a:hover { color: red; }
+h2, h3 { 
+	font-family: avenir, "helvetica neue", helvetica, arial, verdana, sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+}
+
+h2 { font-size: .75em; }
+
+h3 { font-size: 0.6875em; }
+
+h4 {
+	font-size: 0.6875em;
+	letter-spacing: 0.5px;
+}
+
+ul li {
+    font-size: 0.6875em; 
+	letter-spacing: 0.5px;   
+}
+
+p {
+	color: #6c6f70;
+	font-size: 0.6875em; 
+	letter-spacing: 0.5px; 
+}
+
+#content p { font-size: 0.75em; }
+
+ul.link-list li {
+	font-family: courier, helvetica neue, helvetica, arial, verdana, sans-serif;
+	font-size: 0.6875em; 
+	letter-spacing: 0.5px;
+	margin-bottom: 0.25em;
+}
+
+/* - - - - - - - - - - - - */
+
+.black { color: #191c1f; }
+
+.gold { color: #ffd700; }
+
+.orange, .link-list li.orange { color: #d15c00; }
+
+.red { color: #f54029; } /* #c62700 */
+
+.white { color: #fff; }
+
+/* - - - - - - - - - - - - */
+
+em { font-style: italic; }
+
+.no-show { display: none; }
+
+.strike { text-decoration: line-through; }
+
+sup { color: #191c1f; font-size: 0.6875em; font-weight: 500; vertical-align: middle; }
+
+.underline { text-decoration: underline; }
+
+.uppercase { text-transform: uppercase; }
+
+/* - - - - - - - - - - - - */
+
+.semibold { font-weight: 500; }
+
+.bold { font-weight: 600; }
+
+strong { font-weight: bold; }
+
+/* - - - - - - - - - - - - */
+
+.center { text-align: center; }
+
+.indent { text-indent: 16px; }
+
+.indent-half { text-indent: 8px; }
+
+.indent-all { margin: 0 0 0 16px; }
+
+.justify { text-align: justify; }
+
+.right { text-align: right; }
+
+/* - - - - - - - - - - - - - - - - - -
+	Link styles
+- - - - - - - - - - - - - - - */
+
+#nav-list li a { color: #191c1f; text-decoration: none; }
+
+#nav-list li a:hover { color: #c62700; } /* c62700 ffd700 */
+
+#nav-list li a#current { color: #c62700; } /* c62700 ffd700 */
+
+#social-media a { color: #191c1f; text-decoration: none; }
+
+#social-media a:hover { background-color: #191c1f; color: #fff; }
+
+.folio-link a { font-family: courier; font-size: 1em; font-weight: 500; text-align: center; text-decoration: none; }
+
+.folio-link a { position: relative; top: 348px; left: 0; display: block; width: 696px; padding: 0.5em 0; }
+
+/* .folio-link a:hover { } */
+
+.nav-link { color: #191c1f; text-decoration: none; }
+
+.nav-link:hover { color: #ffd700; }
+
+ul.link-list li a { color: #6c6f70; text-decoration: none; }
+
+ul.link-list li a:hover { color: #191c1f; }
+
+/* - - - - - - - - - - - - - - - - - -
+	Font families
+- - - - - - - - - - - - - - - */
+
+/*
+font-family: cousine, monaco, "courier new", courier, monospace;
+font-family: "franklin gothic demi", "franklin gothic  medium", "arial narrow", "helvetica neue", arial, helvetica, geneva, sans-serif;
+*/
+
+/* - - - - - - - - - - - - - - - - - -
+	Color combinations
+- - - - - - - - - - - - - - - */

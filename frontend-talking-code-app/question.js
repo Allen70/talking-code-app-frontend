@@ -27,27 +27,32 @@ answerForm.addEventListener('submit', (event)=> {
     console.log(responseText.value)
     createResponse()
 
-    
-    // displayResponses()
-
+    displayResponses()
         //displayDefaultResponse()
         //displayUserRespons()
         //displayAllOtherResponses()
-
     // updateResponse
-    // destroResponse
+    // destroyResponse
 })
 
 function createResponse() {
     fetch(responsesURL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(responseText.value)
+        body: JSON.stringify({
+            text: responseText.value
+        })
         }
     )
     .then(response => response.json())
     .then(console.log)
 }
-    
-    
 
+// This should be a redirect to a page that displays the just created 
+// response, as well as the question and all of the other responses to 
+// the question
+function displayResponses() {
+    console.log(question.id)
+    window.location.href = `http://localhost:3001/responses.html?id=${question.id}`
+    // 'http://localhost:3001/responses.html'
+}

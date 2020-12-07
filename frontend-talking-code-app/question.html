@@ -14,28 +14,23 @@
                 <li><a href="/daily-question.html">Daily Question</a></li>
                 <li><a href="/featured-questions.html">Featured Questions</a></li>
                 <li><a href="/featured-responses.html">Featured Responses</a></li>
-                <!-- <li><a href="/question.html">Question</a></li>
-                <li><a href="/answer.html">Answer</a></li> -->
                 <li><a href="/categories.html">Categories</a></li>
                 <li><a href="/contact.html">Contact</a></li>
             </ul>
         </nav>
-        <!-- <div id="log-in">
-            <button>Log-in</button>
-            <button>Join</button>
-        </div> -->
-    </header>
+     </header>
         <div id="page-wrap">
             <main>
                 <h2 id="question-container"></h2>
-                <div>
-                    <form id="create-answer" method="POST" action="http://localhost:3000/responses">
-                        <input type="text" name="text" id="response-text" placeholder="Write your answer here">
-                        <input type="submit" value="Submit Answer">
+                <div id="form-container">
+                    <form id="create-answer" method="POST" action="http://localhost:3000/responses"> <!-- change id to create-response and update in js, as well -->
+                        <input type="text" name="text" id="response-text" placeholder="Write your response here">
+                        <input type="submit" value="Submit Reponse">
                     </form>
                     <div class="link-container">
                     </div>
                 </div>
+                <div class="clear"></div> <!-- /.clear -->
             </main>
         </div> <!-- /#page-wrap -->
     </body>
