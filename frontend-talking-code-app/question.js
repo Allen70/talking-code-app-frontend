@@ -35,6 +35,7 @@ fetch(`${questionURL}${id}`)
         })
     })
 
+
     function createResponse() {
         console.log(responseText.value)
                 fetch(responsesURL, {
