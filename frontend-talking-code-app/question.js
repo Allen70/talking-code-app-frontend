@@ -36,19 +36,19 @@ fetch(`${questionURL}${id}`)
     })
 
     function createResponse() {
+        console.log(responseText.value)
                 fetch(responsesURL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        text: responseText.value
+                        text: responseText.value,
+                        question_id: id
                     })
                     }
-                ).then(response => response.json())
-                .then(result => {
-                const responseId = result.response.id
+                )
                 displayResponses()
     
     function displayResponses() {
-    window.location.href = `http://localhost:3001/responses.html?id=${id}&responseid=${responseId}`
-                }})
-}
+    window.location.href = `http://localhost:3001/responses.html?id=${id}`
+                }
+                }

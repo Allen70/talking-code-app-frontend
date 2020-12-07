@@ -6,8 +6,12 @@ const baseURL = 'http://localhost:3000/'
 const questionURL = `${baseURL}` + 'questions/'
 const responsesURL = `${baseURL}` + 'responses/'
 const responseRecordURL = `${baseURL}` + 'response_records/'
+const $questionContainer = document.querySelector('.question-container')
+const $responseContainer = document.querySelector('.response-container')
 
-const $responseContainer = document.querySelector('.response-card')
+
+
+
 
 fetch(`${questionURL}${questionId}`)
     .then(response => response.json())
@@ -15,23 +19,59 @@ fetch(`${questionURL}${questionId}`)
         const question = result.question
         const $questionText = document.createElement('p')
         $questionText.textContent = question.text
-        $responseContainer.append($questionText)
+        $questionContainer.append($questionText)
     })
 
-    fetch(`${responsesURL}${responseId}`)
+function createResponseCards() {
+    fetch(`${questionURL}${questionId}`)
     .then(response => response.json())
     .then(result => {
-        const response = result.response
-        const $responseText = document.createElement('p')
-        $responseText.innerHTML = response.text 
-        $responseContainer.append($responseText)
+        console.log(result.question.responses)
+            result.question.responses.forEach(response => {
+                const $responseCard = document.createElement('div')
+                const $responseText = document.createElement('p')
+                const $editButton = document.createElement('button')
+                const $deleteButton = document.createElement('button')
 
+                $responseCard.classList = 'response-card'
+                $responseText.innerText = response.text
+                $editButton.textContent = 'Edit'
+                $editButton.classList = 'edit-button'
+                $deleteButton.textContent = 'Delete'
+                $deleteButton.classList = 'delete-button'
+                $deleteButton.addEventListener('click', (event) => {
+                    event.preventDefault()
+                    $responseCard.remove()
+                    fetch(`${responsesURL}${response.id}`, {method: 'DELETE'})
+                })
+
+                const $editForm = document.createElement('form')
+                const $editText = document.createElement('input')
+                const $editFormSubmitButton = document.createElement('input')
+                $editText.name = 'text'
+                $editText.type = 'text'
+                $editText.placeholder = response.text
+                $editFormSubmitButton.type = 'submit'
+                $editFormSubmitButton.value = 'Edit Response'
+
+                console.log(response.text)
+                $editFormSubmitButton.addEventListener('submit', (event) => {
+                    event.preventDefault()
+                    const editFormData = new FormData(event.target)
+                    const text = editFormData.get('text')
+                    fetch(`${responsesURL}${response.id}`, {
+                        method: 'PATCH',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            text: text
+                        })
+                    })
+                })
+                $editForm.append($editText, $editFormSubmitButton)
+                $responseCard.append($responseText, $editButton, $deleteButton, $editForm)
+                $responseContainer.append($responseCard)
+        })
     })
+}
 
-fetch(`${responseRecordURL}`, {
-    method: 'POST',
-    headers: { 'Content-Type' : 'application/json' },
-    body: JSON.stringify({
-        question_id: questionId,
-        response_id: responseId
-    })})
+createResponseCards()
