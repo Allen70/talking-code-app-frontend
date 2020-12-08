@@ -11,8 +11,6 @@
     <style>
         body { background-color: #F2D22E; }
         
-        #social-media a:hover { background-color: #5478BF; }
-        
         #nav-list li a { color: #191c1f; text-decoration: none; }
         
         #nav-list li a:hover { color: #F26938; }
@@ -31,18 +29,11 @@
 
         .question-box a { float: left; width: 160px; height: 160px; margin: 0 8px 8px 0; padding: 0.5em 4px 0 4px; }
         
-        .question-box a { color: #fff; font-family: courier, sans-serif; font-size: .8125em; font-weight: 500; text-align: center; text-decoration: none; }
+        .question-box a { background-color: #F28D35; color: #fff; font-family: courier, sans-serif; font-size: 0.8125em; font-weight: 500; text-align: center; text-decoration: none; }
 
-        .question-box a { background-color: #F28D35; }
-        
-        .question-box a:hover { background-color: #5478BF; color: #191c1f; }
+        .question-box a:hover { background-color: #5478BF; color: #fff; }
 
-
-        /* .box1 a, .box2 a, .box3 a { float: left; width: 160px; height: 160px; margin: 0 8px 8px 0; padding: 0.5em 4px 0 4px; }
-        
-        .box1y a, .box2y a, .box3y a { float: left; width: 160px; height: 160px; margin: 0 0 8px 0; padding: 0.5em 4px 0 4px; }
-        
-        .box1 a, .box1y a, .box2 a, .box2y a, .box3 a, .box3y a { color: #191c1f; font-family: courier, sans-serif; font-size: .8125em; font-weight: 500; text-align: center; text-decoration: none; }
+        /* .box1 a, .box1y a, .box2 a, .box2y a, .box3 a, .box3y a { color: #191c1f; }
         
         .box1 a, .box1y a { background-color: #F2AE30; }
         
@@ -57,7 +48,7 @@
     <header>
         <nav>
             <ul id="nav-list">
-                <li><a href="/index.html" id="site-name" title="Home">#{talking_code_denver}</a></li>
+                <li><a href="/index.html" id="site-name-code" title="Home"><code>#{talking_code_denver}</code></a></li>
                 <li><a href="/mod-1.html" id="current" title="Mod 1">Mod 1</a></li>
                 <li><a href="/mod-2.html" title="Mod 2">Mod 2</a></li>
                 <li><a href="/mod-3.html" title="Mod 3">Mod 3</a></li>
@@ -67,14 +58,8 @@
                 <li><a href="/resources.html" title="Resources">Resources</a></li>    
             </ul>
         </nav>	
-        <div id="social-media">
-            <!-- <a href="https://flatironschool.com/campuses/denver" target="_blank" alt="">Flatiron School</a>
-            <a href="https://www.facebook.com/FlatironSchool" target="_blank" alt="">Facebook</a>
-            <a href="https://github.com/flatiron-school" target="_blank" alt="">GitHub</a>
-            <a href="https://www.instagram.com/flatironschool" target="_blank" alt="">Instagram</a>
-            <a href="https://medium.com/@FlatironSchool" target="_blank" alt="">Medium</a>
-            <a href="https://twitter.com/flatironschool" target="_blank" alt="">Twitter</a>
-            <a href="https://www.youtube.com/channel/UCedo9harMOgixvNhNB0sEyA" target="_blank" alt="">YouTube</a> -->
+        <div id="search-filter">
+            
         </div>
         <div class="clear"></div> <!-- .clear -->
     </header>
@@ -96,39 +81,34 @@
             <h2>Mod 1 Resources</h2>
             <ul class="white">
                 <li><a href="https://ruby-doc.org/">Ruby-Doc.org</a></li>
+                <li><a href="">Resource link</a></li>
+                <li><a href="">Resource link</a></li>
             </ul>
         </div> <!-- /#side-bar -->
         <div id="content">
-            <!-- <div class="box1"><a href="" title="">
-                What does it mean for a method to "return" a value?
-            </a></div>
-            <div class="box2"><a href="" title="">
-                What is the difference between a procedure, a function, and a method?
-            </a></div>
-            <div class="box3"><a href="" title="">
-                What's the difference between a hash and an array?
-            </a></div>
-            <div class="box1y"><a href="" title="">
-                What's the difference between a hash and an object?
-            </a></div>
-            <div class="box2"><a href="" title="">
-                When should you use map? Select? Reduce? Find?
-            </a></div>
-            <div class="box3"><a href="" title="">
-                What's the difference between a class and an instance of a class?
-            </a></div>
-            <div class="box1"><a href="" title="">
-                What's the difference between an instance method and a class method?
-            </a></div>
-            <div class="box2y"><a href="" title="">
-                What is a gem? Gemfile? Gemfile.lock?
-            </a></div>
-            <div class="box3"><a href="" title="">
-                What is a one to many relationship? Many to many?
-            </a></div> -->
+            <!-- <div class="box1"><a href="" title="">What does it mean for a method to "return" a value?</a></div>
+            <div class="box2"><a href="" title="">What is the difference between a procedure, a function, and a method?</a></div>
+            <div class="box3"><a href="" title="">What's the difference between a hash and an array?</a></div>
+            <div class="box1y"><a href="" title="">What's the difference between a hash and an object?</a></div>
+            <div class="box2"><a href="" title="">When should you use map? Select? Reduce? Find?</a></div>
+            <div class="box3"><a href="" title="">What's the difference between a class and an instance of a class?</a></div>
+            <div class="box1"><a href="" title="">What's the difference between an instance method and a class method?</a></div>
+            <div class="box2y"><a href="" title="">What is a gem? Gemfile? Gemfile.lock?</a></div>
+            <div class="box3"><a href="" title="">What is a one to many relationship? Many to many?</a></div> -->
             <div class="clear"></div> <!-- /.clear -->
         </div> <!-- /#content -->
         <div class="clear"></div> <!-- /.clear -->
+        <footer>
+            <div id="social-media">
+                <!-- <a href="https://flatironschool.com/campuses/denver" target="_blank" alt="">Flatiron School</a>
+                <a href="https://www.facebook.com/FlatironSchool" target="_blank" alt="">Facebook</a>
+                <a href="https://github.com/flatiron-school" target="_blank" alt="">GitHub</a>
+                <a href="https://www.instagram.com/flatironschool" target="_blank" alt="">Instagram</a>
+                <a href="https://medium.com/@FlatironSchool" target="_blank" alt="">Medium</a>
+                <a href="https://twitter.com/flatironschool" target="_blank" alt="">Twitter</a>
+                <a href="https://www.youtube.com/channel/UCedo9harMOgixvNhNB0sEyA" target="_blank" alt="">YouTube</a> -->
+            </div>
+        </footer>
     </div> <!-- /#page-wrap -->
 </body>
 </html>
