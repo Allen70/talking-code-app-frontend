@@ -31,10 +31,15 @@ function createResponseCards() {
                 const $deleteButton = document.createElement('button')
 
                 $responseCard.classList = 'response-card' // CSS selector
-                // $responseText.innerText = response.text
                 $responseText.innerHTML = `<p>Default response: ${response.text}</p>`
                 $editButton.textContent = 'Edit'
                 $editButton.classList = 'edit-button' // CSS selector
+                $editButton.addEventListener('click', (event) => {
+                    event.preventDefault()
+                    $editText.classList.toggle('hidden')
+                    $editFormSubmitButton.classList.toggle('hidden')
+                })
+
                 $deleteButton.textContent = 'Delete'
                 $deleteButton.classList = 'delete-button' // CSS selector
                 $deleteButton.addEventListener('click', (event) => {
@@ -46,22 +51,26 @@ function createResponseCards() {
                 const $editForm = document.createElement('form')
                 const $editText = document.createElement('input')
                 const $editFormSubmitButton = document.createElement('input')
+
                 $editText.name = 'text'
                 $editText.type = 'text'
                 $editText.placeholder = response.text
+                $editText.classList.add('hidden')
                 $editFormSubmitButton.type = 'submit'
                 $editFormSubmitButton.value = 'Edit Response' // Submit edit or something similar
+                $editFormSubmitButton.classList.add('hidden')
+                $editFormSubmitButton.addEventListener('click', (event) => {
 
-                console.log(response.text)
-                $editFormSubmitButton.addEventListener('submit', (event) => {
                     event.preventDefault()
-                    const editFormData = new FormData(event.target)
-                    const text = editFormData.get('text')
+               
+                    const text = $editText.value
+                    console.log(text)      
                     fetch(`${responsesURL}${response.id}`, {
                         method: 'PATCH',
-                        headers: { 'Content-Type': 'application/json' },
+                        headers: { 'Content-Type' : 'application/json' },
                         body: JSON.stringify({
-                            text: text
+                            text: text,
+                            question_id: questionId
                         })
                     })
                 })
@@ -71,5 +80,6 @@ function createResponseCards() {
         })
     })
 }
+
 
 createResponseCards()
