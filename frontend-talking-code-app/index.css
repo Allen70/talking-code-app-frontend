@@ -1,0 +1,21 @@
+body { background-color: #eceb81; }
+
+#nav-list li a { color: #191c1f; text-decoration: none; }
+
+#nav-list li a:hover, #nav-list li a#site-name-current { color: #c62700; }
+
+#page-wrap { 
+    background-color: #fff; 
+    margin: 3.5em auto 0 auto;
+}
+
+main {
+    background-color: #191c1f;;
+    margin: 16px 0 0 0;
+}
+
+#site-description p {
+    color: #fff;
+    font-size: 2em;
+    line-height: 1em;
+}

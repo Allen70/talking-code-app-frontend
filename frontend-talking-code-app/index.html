@@ -2,29 +2,42 @@
 <html lang="en">
 <head>
     <title>Talking Code Denver</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta name="keywords" content="flatiron school, denver campus, talking code">
-    <meta name="robots" content="noindex">
-    <link rel="stylesheet" href="main.css"/>
+    <meta charset="UTF-8" />
+    <meta name="description" content="A place where we can practice talking code with each other, and more" />
+    <meta name="keywords" content="flatiron school, denver campus, talking code" />
+    <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="main.css" />
     <script src="index.js" defer></script>
     <style>
-        body { 
-            background-color: #f2f2f2; 
-        }
+        body { background-color: #eceb81; }
+
+        #nav-list li a { color: #191c1f; text-decoration: none; }
+
+        #nav-list li a:hover, #nav-list li a#site-name-current { color: #c62700; }
 
         #page-wrap { 
-            background-color: #fff; 
-            width: 928px;
-            padding: 1.5em 24px;
+            /* background-color: #fff;  */
+            margin: 3.5em auto 0 auto;
+        }
+
+        #content {
+            /* background-color: #191c1f;; */
+            margin: 1.5em 0 0 0;
+            padding: 0;
+        }
+
+        #site-description p {
+            font-size: 1.5em;
+            font-weight: 500;
+            line-height: 1em;
         }
     </style>
-</head>
+ </head>
 <body>
     <header>
         <nav>
             <ul id="nav-list">
-                <li><a href="/index.html" id="site-name" title="Home">Talking Code Denver</a></li>
+                <li><a href="/index.html" id="site-name-current" title="Home">Talking Code Denver</a></li>
                 <li><a href="/mod-1.html" title="Mod 1">Mod 1</a></li>
                 <li><a href="/mod-2.html" title="Mod 2">Mod 2</a></li>
                 <li><a href="/mod-3.html" title="Mod 3">Mod 3</a></li>
@@ -39,30 +52,15 @@
         </div><div class="clear"></div> <!-- .clear -->
     </header>
    <div id="page-wrap">
-        <main>
-            <h1>Talking Code Denver</h1>
+        <div id="content">
+            <h1 class="no-show">Talking Code Denver</h1>
             <section id="site-description">
-                <p>Talking Code Denver is a place for the students and alumni of the "love bubble" to practice talking code with each other. It is also a clearing house, of sorts, 
-                    of resources to help us as we make our way through the program. And, lastly, it includes a directory of our contact information so that we can stay in touch.</p>
-            </section>
-             <!-- <section id="left">
-                <h2 class="index-h2">Sign in</h2>
-                <form id="login-form" method="GET" action="http://localhost:3001/create-review.html">
-                    <input type="text" name="username" id="username-field" placeholder="Username">
-                    <input type="password" name="password" id="password-field" placeholder="Password">
-                    <input type="submit" value="Login" id="login-form-submit" class="submit-btn">
-                </form>
-            </section>
-            <section id="right">
-                <h2 class="index-h2">Join</h2>
-                <form action="http://localhost:3000/users" method="POST" id="create-user-form">
-                    <input type="text" name="username" id="new-username" placeholder="New Username">
-                    <input type="password" name="password" id="new-password" placeholder="New Password">
-                    <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password">
-                    <input type="submit" value="Create User" id="new-user-form-submit" class="submit-btn">
-                </form>
-            </section> -->
-        </main>
+                <h2 class="no-show">Site Description</h2>
+                <p>Hi there! This is a place for the students and alumni of the "love bubble" to practice talking code with each other.</p><br>
+                <p>It's also a repository of resources to help us as we make our way through each mod and beyond.</p><br> 
+                <p>And, it's got a directory of the places where we can find each other online so that we can stay in touch.</p>
+            </section>    
+        </div>
         <footer>
             <div id="social-media">
                 <!-- <a href="https://flatironschool.com/campuses/denver" target="_blank" alt="">Flatiron School</a>
