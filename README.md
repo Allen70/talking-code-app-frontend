@@ -52,7 +52,9 @@ Alt-H Guide
   * Adding authorizations so users can delete only their questions
   * Adding authorizations so users can modify only their answers
   * Mod 6 with resources.
-  * Question is assigned to Mod by where it is created
+  * Questions are assigned to each mod
+  * Question is assigned to mod by where it is created
+  * Dynamically Style the questions on each Mod page
   
 ## Contact
   Talking Code App was created by Allen Lea and [Gerald Bivens](https://www.linkedin.com/in/gerald-bivens/).
