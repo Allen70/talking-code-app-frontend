@@ -9,10 +9,7 @@ const responseRecordURL = `${baseURL}` + 'response_records/'
 const $questionContainer = document.querySelector('.question-container')
 const $responseContainer = document.querySelector('.response-container')
 
-
-
-
-
+// Question copy/text
 fetch(`${questionURL}${questionId}`)
     .then(response => response.json())
     .then(result => {
@@ -32,17 +29,19 @@ function createResponseCards() {
                 const $responseText = document.createElement('p')
                 const $editButton = document.createElement('button')
                 const $deleteButton = document.createElement('button')
-                $responseCard.classList = 'response-card'
-                $responseText.innerText = response.text
-                 $editButton.textContent = 'Edit'
-                $editButton.classList = 'edit-button'
+
+                $responseCard.classList = 'response-card' // CSS selector
+                $responseText.innerHTML = `<p>Default response: ${response.text}</p>`
+                $editButton.textContent = 'Edit'
+                $editButton.classList = 'edit-button' // CSS selector
                 $editButton.addEventListener('click', (event) => {
                     event.preventDefault()
                     $editText.classList.toggle('hidden')
                     $editFormSubmitButton.classList.toggle('hidden')
                 })
+
                 $deleteButton.textContent = 'Delete'
-                $deleteButton.classList = 'delete-button'
+                $deleteButton.classList = 'delete-button' // CSS selector
                 $deleteButton.addEventListener('click', (event) => {
                     event.preventDefault()
                     $responseCard.remove()
@@ -58,9 +57,10 @@ function createResponseCards() {
                 $editText.placeholder = response.text
                 $editText.classList.add('hidden')
                 $editFormSubmitButton.type = 'submit'
-                $editFormSubmitButton.value = 'Edit Response'
+                $editFormSubmitButton.value = 'Edit Response' // Submit edit or something similar
                 $editFormSubmitButton.classList.add('hidden')
                 $editFormSubmitButton.addEventListener('click', (event) => {
+
                     event.preventDefault()
                
                     const text = $editText.value

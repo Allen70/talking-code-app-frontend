@@ -1,32 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>Talking Code Denver &mdash; Write a response</title>
         <meta charset="UTF-8">
-        <title>Question</title>
-        <link rel="stylesheet" href="main.css">
+        <meta name="description" content="">
+        <meta name="keywords" content="flatiron school, denver campus, talking code, write a response"/>
+        <meta name="robots" content="noindex"/>
+        <link rel="stylesheet" href="main.css"/>
         <script defer src="question.js"></script>
+        <style>
+            body { background-color: #191c1f; }
+            
+            #page-wrap { width: 976px; background-color: #fff; }
+            
+            main { padding: 1.5em 24px; }
+            
+            h2 p {
+                margin-bottom: 1em;
+                font-size: 1.5em;
+                text-transform: none;
+            }
+
+            form { width: 488px; }
+
+            #response-text { 
+                width: 472px;
+                height: 488px; 
+                margin-bottom: 1em;
+                padding: 0.5em;
+                text-align: left;
+            }
+
+            #submit-button { 
+                width: 100%;
+                height: 32px; 
+            }
+        </style>
     </head>
     <body>
-    <header>
-        <h1><a id="home" href="/index.html">Talking Code</a></h1>
-        <nav>
-            <ul id="nav-list">
-                <li><a href="/daily-question.html">Daily Question</a></li>
-                <li><a href="/featured-questions.html">Featured Questions</a></li>
-                <li><a href="/featured-responses.html">Featured Responses</a></li>
-                <li><a href="/categories.html">Categories</a></li>
-                <li><a href="/contact.html">Contact</a></li>
-            </ul>
-        </nav>
-     </header>
+        <header>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="/index.html" id="site-name" title="Home">Talking Code Denver</a></li>
+                    <li><a href="/mod-1.html" id="current" title="Mod 1">Mod 1</a></li>
+                    <li><a href="/mod-2.html" title="Mod 2">Mod 2</a></li>
+                    <li><a href="/mod-3.html" title="Mod 3">Mod 3</a></li>
+                    <li><a href="/mod-4.html" title="Mod 4">Mod 4</a></li>
+                    <li><a href="/mod-5.html" title="Mod 5">Mod 5</a></li>
+                    <li><a href="/directory.html" title="Directory">Directory</a></li>    
+                </ul>
+            </nav>	
+            <div id="social-media">
+                <!-- <a href="https://flatironschool.com/campuses/denver" target="_blank" alt="">Flatiron School</a>
+                <a href="https://www.facebook.com/FlatironSchool" target="_blank" alt="">Facebook</a>
+                <a href="https://github.com/flatiron-school" target="_blank" alt="">GitHub</a>
+                <a href="https://www.instagram.com/flatironschool" target="_blank" alt="">Instagram</a>
+                <a href="https://medium.com/@FlatironSchool" target="_blank" alt="">Medium</a>
+                <a href="https://twitter.com/flatironschool" target="_blank" alt="">Twitter</a>
+                <a href="https://www.youtube.com/channel/UCedo9harMOgixvNhNB0sEyA" target="_blank" alt="">YouTube</a> -->
+            </div>
+            <div class="clear"></div> <!-- .clear -->
+        </header>
         <div id="page-wrap">
             <main>
                 <h2 id="question-container"></h2>
 
                 <div id="form-container">
                     <form id="create-answer" method="POST" action="http://localhost:3000/responses"> <!-- change id to create-response and update in js, as well -->
-                        <input type="text" name="text" id="response-text" placeholder="Write your response here">
-                        <input type="submit" value="Submit Reponse">
+                        <!-- <input type="text" name="text" id="response-text" placeholder="Write your response here"> -->
+                        
+                        <label for="user_review">Write a response</label>
+                        <textarea name="text" id="response-text"></textarea>
+
+                        <input type="submit" value="Submit Reponse" id="submit-button">
                     </form>
                     <div class="link-container">
                     </div>
@@ -36,3 +82,41 @@
         </div> <!-- /#page-wrap -->
     </body>
 </html>
+
+<!-- <main>
+    <h2>Write a review</h2>
+    <div id="quote">
+        <h3>Quotation</h3>
+    </div>
+    <div>
+        <h4>Please rate how much this quote speaks to you</h4>
+        
+        <form id="review-form" method="POST" action="http://localhost:3000/reviews">
+            <input id="1" type="radio" name="rating" value="1" checked>
+            <label for="1">1</label>
+  
+            <input id="2" type="radio" name="rating" value="2">
+            <label for="2">2</label>
+  
+            <input id="3" type="radio" name="rating" value="3">
+            <label for="3">3</label>
+  
+            <input id="4" type="radio" name="rating" value="4">
+            <label for="4">4</label>
+  
+            <input id="5" type="radio" name="rating" value="5">
+            <label for="5">5</label>
+            <br>
+            <br>
+  
+            <label for="user_review">Please write a review</label>
+           
+            <textarea name="user_review" id="user_review"></textarea>
+           
+            <input id="hiddenUsername" type="hidden" name="username" value="">
+            <input id="hiddenQuoteId" type="hidden" name="quote" value="">
+            
+            <input id="submit-btn" type="submit" value="Submit response">
+        </form>
+    </div>
+</main> -->

@@ -1,18 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Document</title>
+        <title>Talking Code Denver &mdash; </title>
+        <meta charset="UTF-8"/>
+        <meta name="description" content=""/>
+        <meta name="keywords" content="flatiron school, denver campus, talking code, question, responses, response"/>
+        <meta name="robots" content="noindex"/>
+        <link rel="stylesheet" href="main.css"/>
         <script defer src="response.js"></script>
         <link rel="stylesheet" href="main.css">
+        <style>
+            body { background-color: #191c1f; }
+
+            #page-wrap { width: 976px; background-color: #fff; }
+
+            main { padding: 1.5em 24px; }
+
+            .question-container { 
+                margin-bottom: 0.5em; 
+                border: 1px solid #191c1f; 
+            }
+
+            .question-container p { 
+                font-size: 1em;
+                text-transform: none; }
+
+            .response-container { 
+                width: 488px;
+                /* border: 1px solid #191c1f;  */
+            }
+
+            form { 
+                /* background-color: aqua;  */
+            }
+
+            form input { 
+                width: 100%; 
+                margin-bottom: 2em;
+            }
+
+            /* .response-card { background-color: #f2f2f2; } */
+
+            .response-card p { font-size: 0.9375em; }
+
+            .edit-button { background-color: red; }
+            .delete-button { background-color: blue; }
+        </style>
     </head>
     <body>
-        <div class='body-wrapper'>
+        <header>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="/index.html" id="site-name" title="Home">Talking Code Denver</a></li>
+                    <li><a href="/mod-1.html" title="Mod 1">Mod 1</a></li>
+                    <li><a href="/mod-2.html" title="Mod 2">Mod 2</a></li>
+                    <li><a href="/mod-3.html" title="Mod 3">Mod 3</a></li>
+                    <li><a href="/mod-4.html" title="Mod 4">Mod 4</a></li>
+                    <li><a href="/mod-5.html" title="Mod 5">Mod 5</a></li>
+                    <li><a href="/directory.html" title="Directory">Directory</a></li>    
+                </ul>
+            </nav>	
+            <div id="social-media">
+                <!-- <a href="https://flatironschool.com/campuses/denver" target="_blank" alt="">Flatiron School</a>
+                <a href="https://www.facebook.com/FlatironSchool" target="_blank" alt="">Facebook</a>
+                <a href="https://github.com/flatiron-school" target="_blank" alt="">GitHub</a>
+                <a href="https://www.instagram.com/flatironschool" target="_blank" alt="">Instagram</a>
+                <a href="https://medium.com/@FlatironSchool" target="_blank" alt="">Medium</a>
+                <a href="https://twitter.com/flatironschool" target="_blank" alt="">Twitter</a>
+                <a href="https://www.youtube.com/channel/UCedo9harMOgixvNhNB0sEyA" target="_blank" alt="">YouTube</a> -->
+            </div>
+            <div class="clear"></div> <!-- .clear -->
+        </header>
+        <div id="page-wrap">
             <main>
-
-                <h1>Feedback</h1>
                 <div class="question-container"></div>
                 <div class="response-container"></div>
             </main>
-        </div>
+        </div> <!-- /#page-wrap -->
     </body>
 </html>
