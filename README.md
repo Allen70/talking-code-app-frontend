@@ -48,4 +48,4 @@ Alt-H Guide
 
 ## lisence
 
-[Click here to view](insert licens)
+[Click here to view](insert license)
