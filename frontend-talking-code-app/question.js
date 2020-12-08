@@ -22,22 +22,13 @@ fetch(`${questionURL}${id}`)
         answerForm.addEventListener('submit', (event)=> {
             event.preventDefault()
             createResponse()
-            
-            // createSmartResponse()
-        
+            //displayDefaultResponse()
 
-                //displayDefaultResponse()
-                //displayUserRespons()
-                //displayAllOtherResponses()
-
-            // updateResponse
-            // destroResponse
         })
     })
 
 
     function createResponse() {
-        console.log(responseText.value)
                 fetch(responsesURL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -50,7 +41,7 @@ fetch(`${questionURL}${id}`)
                 .then(console.log)
                 displayResponses()
     
-    function displayResponses() {
-    window.location.href = `http://localhost:3001/responses.html?id=${id}`
-                }
-                }
+        function displayResponses() {
+        window.location.href = `http://localhost:3001/responses.html?id=${id}`
+        }
+    }
