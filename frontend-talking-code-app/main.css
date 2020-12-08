@@ -63,6 +63,10 @@ body {
 	font-family: "helvetica neue", helvetica, arial, verdana, sans-serif;
 }
 
+.hidden {
+	display: none;
+}
+
 /* - - - - - - - - - - - - - - - - - -
 	Layout
 - - - - - - - - - - - - - - - */

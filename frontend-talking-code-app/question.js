@@ -46,7 +46,8 @@ fetch(`${questionURL}${id}`)
                         question_id: id
                     })
                     }
-                )
+                ).then(response => response.json())
+                .then(console.log)
                 displayResponses()
     
     function displayResponses() {

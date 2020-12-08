@@ -32,11 +32,15 @@ function createResponseCards() {
                 const $responseText = document.createElement('p')
                 const $editButton = document.createElement('button')
                 const $deleteButton = document.createElement('button')
-
                 $responseCard.classList = 'response-card'
                 $responseText.innerText = response.text
-                $editButton.textContent = 'Edit'
+                 $editButton.textContent = 'Edit'
                 $editButton.classList = 'edit-button'
+                $editButton.addEventListener('click', (event) => {
+                    event.preventDefault()
+                    $editText.classList.toggle('hidden')
+                    $editFormSubmitButton.classList.toggle('hidden')
+                })
                 $deleteButton.textContent = 'Delete'
                 $deleteButton.classList = 'delete-button'
                 $deleteButton.addEventListener('click', (event) => {
@@ -48,22 +52,25 @@ function createResponseCards() {
                 const $editForm = document.createElement('form')
                 const $editText = document.createElement('input')
                 const $editFormSubmitButton = document.createElement('input')
+
                 $editText.name = 'text'
                 $editText.type = 'text'
                 $editText.placeholder = response.text
+                $editText.classList.add('hidden')
                 $editFormSubmitButton.type = 'submit'
                 $editFormSubmitButton.value = 'Edit Response'
-
-                console.log(response.text)
-                $editFormSubmitButton.addEventListener('submit', (event) => {
+                $editFormSubmitButton.classList.add('hidden')
+                $editFormSubmitButton.addEventListener('click', (event) => {
                     event.preventDefault()
-                    const editFormData = new FormData(event.target)
-                    const text = editFormData.get('text')
+               
+                    const text = $editText.value
+                    console.log(text)      
                     fetch(`${responsesURL}${response.id}`, {
                         method: 'PATCH',
-                        headers: { 'Content-Type': 'application/json' },
+                        headers: { 'Content-Type' : 'application/json' },
                         body: JSON.stringify({
-                            text: text
+                            text: text,
+                            question_id: questionId
                         })
                     })
                 })
@@ -73,5 +80,6 @@ function createResponseCards() {
         })
     })
 }
+
 
 createResponseCards()
