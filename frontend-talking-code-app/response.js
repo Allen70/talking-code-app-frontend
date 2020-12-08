@@ -9,10 +9,7 @@ const responseRecordURL = `${baseURL}` + 'response_records/'
 const $questionContainer = document.querySelector('.question-container')
 const $responseContainer = document.querySelector('.response-container')
 
-
-
-
-
+// Question copy/text
 fetch(`${questionURL}${questionId}`)
     .then(response => response.json())
     .then(result => {
@@ -33,12 +30,13 @@ function createResponseCards() {
                 const $editButton = document.createElement('button')
                 const $deleteButton = document.createElement('button')
 
-                $responseCard.classList = 'response-card'
-                $responseText.innerText = response.text
+                $responseCard.classList = 'response-card' // CSS selector
+                // $responseText.innerText = response.text
+                $responseText.innerHTML = `<p>Default response: ${response.text}</p>`
                 $editButton.textContent = 'Edit'
-                $editButton.classList = 'edit-button'
+                $editButton.classList = 'edit-button' // CSS selector
                 $deleteButton.textContent = 'Delete'
-                $deleteButton.classList = 'delete-button'
+                $deleteButton.classList = 'delete-button' // CSS selector
                 $deleteButton.addEventListener('click', (event) => {
                     event.preventDefault()
                     $responseCard.remove()
@@ -52,7 +50,7 @@ function createResponseCards() {
                 $editText.type = 'text'
                 $editText.placeholder = response.text
                 $editFormSubmitButton.type = 'submit'
-                $editFormSubmitButton.value = 'Edit Response'
+                $editFormSubmitButton.value = 'Edit Response' // Submit edit or something similar
 
                 console.log(response.text)
                 $editFormSubmitButton.addEventListener('submit', (event) => {

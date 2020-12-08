@@ -39,7 +39,7 @@ fetch(questionURL)
         result.questions.map( question => {
             console.log(question)
             const questionBox = document.createElement('div')
-            questionBox.className = 'question-box'
+            questionBox.classList = 'question-box'
             questionBox.innerHTML = `
                 <a href="question.html?id=${question.id}" title="">${question.text}</a>
             `
