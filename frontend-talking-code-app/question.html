@@ -9,31 +9,58 @@
         <link rel="stylesheet" href="main.css"/>
         <script defer src="question.js"></script>
         <style>
-            body { background-color: #191c1f; }
-            
-            #page-wrap { width: 976px; background-color: #fff; }
-            
-            main { padding: 1.5em 24px; }
+            body { 
+                background-color: #5478BF; 
+            }
+
+            #nav-list li a { 
+                color: #191c1f; 
+                text-decoration: none; 
+            }
+
+            #nav-list li a:hover, #nav-list li a#current { 
+                color: #F26938; 
+            }
+
+            #page-wrap { 
+                background-color: #191c1f; 
+                padding-bottom: 2em; 
+            }
+
+            main { 
+                padding: 1.5em 24px; 
+            }
             
             h2 p {
+                background-color: #F2D22E;
                 margin-bottom: 1em;
+                padding: 0.5em 0 0.5em 8px;
                 font-size: 1.5em;
                 text-transform: none;
             }
 
-            form { width: 488px; }
+            #form-container {
+                background-color: #F28D35;
+                width: 472px;
+                padding: 0.5em 8px;
+            }
+            
+            form { 
+                width: 472px; 
+            }
 
             #response-text { 
-                width: 472px;
-                height: 488px; 
-                margin-bottom: 1em;
-                padding: 0.5em;
+                width: 456px;
+                margin-bottom: 0.5em;
+                padding: 0.5em 8px 24em 8px; /* approximates 5x4 aspect ratio */
                 text-align: left;
+                border: none;
             }
 
             #submit-button { 
-                width: 100%;
-                height: 32px; 
+                width: 472px;
+                padding: 0.5em 0;
+                border: none; 
             }
         </style>
     </head>
@@ -42,81 +69,48 @@
             <nav>
                 <ul id="nav-list">
                     <li><a href="/index.html" id="site-name" title="Home">Talking Code Denver</a></li>
-                    <li><a href="/mod-1.html" id="current" title="Mod 1">Mod 1</a></li>
+                    <li><a href="/mod-1.html" title="Mod 1">Mod 1</a></li>
                     <li><a href="/mod-2.html" title="Mod 2">Mod 2</a></li>
                     <li><a href="/mod-3.html" title="Mod 3">Mod 3</a></li>
                     <li><a href="/mod-4.html" title="Mod 4">Mod 4</a></li>
                     <li><a href="/mod-5.html" title="Mod 5">Mod 5</a></li>
+                    <li><a href="/resources.html" title="Resources">Resources</a></li>    
                     <li><a href="/directory.html" title="Directory">Directory</a></li>    
                 </ul>
             </nav>	
-            <div id="social-media">
-                <!-- <a href="https://flatironschool.com/campuses/denver" target="_blank" alt="">Flatiron School</a>
-                <a href="https://www.facebook.com/FlatironSchool" target="_blank" alt="">Facebook</a>
-                <a href="https://github.com/flatiron-school" target="_blank" alt="">GitHub</a>
-                <a href="https://www.instagram.com/flatironschool" target="_blank" alt="">Instagram</a>
-                <a href="https://medium.com/@FlatironSchool" target="_blank" alt="">Medium</a>
-                <a href="https://twitter.com/flatironschool" target="_blank" alt="">Twitter</a>
-                <a href="https://www.youtube.com/channel/UCedo9harMOgixvNhNB0sEyA" target="_blank" alt="">YouTube</a> -->
+            <div id="search-filter">
+
             </div>
+            
             <div class="clear"></div> <!-- .clear -->
         </header>
+        
         <div id="page-wrap">
+            <h1 class="no-show">Talking Code Denver</h1>
+            
             <main>
                 <h2 id="question-container"></h2>
 
                 <div id="form-container">
-                    <form id="create-answer" method="POST" action="http://localhost:3000/responses"> <!-- change id to create-response and update in js, as well -->
-                        <!-- <input type="text" name="text" id="response-text" placeholder="Write your response here"> -->
-                        
-                        <label for="user_review">Write a response</label>
-                        <textarea name="text" id="response-text"></textarea>
-
+                    <form id="create-answer" method="POST" action="http://localhost:3000/responses">
+                        <input type="text" id="response-text" placeholder="Write a response">
                         <input type="submit" value="Submit Reponse" id="submit-button">
                     </form>
-                    <div class="link-container">
-                    </div>
                 </div>
-                <div class="clear"></div> <!-- /.clear -->
             </main>
+            
+            <footer>
+                <div id="social-media">
+                    <!-- <a href="https://flatironschool.com/campuses/denver" target="_blank" alt="">Flatiron School</a>
+                    <a href="https://www.facebook.com/FlatironSchool" target="_blank" alt="">Facebook</a>
+                    <a href="https://github.com/flatiron-school" target="_blank" alt="">GitHub</a>
+                    <a href="https://www.instagram.com/flatironschool" target="_blank" alt="">Instagram</a>
+                    <a href="https://medium.com/@FlatironSchool" target="_blank" alt="">Medium</a>
+                    <a href="https://twitter.com/flatironschool" target="_blank" alt="">Twitter</a>
+                    <a href="https://www.youtube.com/channel/UCedo9harMOgixvNhNB0sEyA" target="_blank" alt="">YouTube</a> -->
+                </div>
+            </footer>
+
         </div> <!-- /#page-wrap -->
     </body>
 </html>
-
-<!-- <main>
-    <h2>Write a review</h2>
-    <div id="quote">
-        <h3>Quotation</h3>
-    </div>
-    <div>
-        <h4>Please rate how much this quote speaks to you</h4>
-        
-        <form id="review-form" method="POST" action="http://localhost:3000/reviews">
-            <input id="1" type="radio" name="rating" value="1" checked>
-            <label for="1">1</label>
-  
-            <input id="2" type="radio" name="rating" value="2">
-            <label for="2">2</label>
-  
-            <input id="3" type="radio" name="rating" value="3">
-            <label for="3">3</label>
-  
-            <input id="4" type="radio" name="rating" value="4">
-            <label for="4">4</label>
-  
-            <input id="5" type="radio" name="rating" value="5">
-            <label for="5">5</label>
-            <br>
-            <br>
-  
-            <label for="user_review">Please write a review</label>
-           
-            <textarea name="user_review" id="user_review"></textarea>
-           
-            <input id="hiddenUsername" type="hidden" name="username" value="">
-            <input id="hiddenQuoteId" type="hidden" name="quote" value="">
-            
-            <input id="submit-btn" type="submit" value="Submit response">
-        </form>
-    </div>
-</main> -->

@@ -1,3 +1,5 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -248,7 +250,11 @@ strong { font-weight: bold; }
 	text-decoration: none; 
 }
 
-#nav-list li a:hover, #nav-list li a#current { color: #c62700; } /* c62700 ffd700 */
+#nav-list li a:hover, #nav-list li a#current { 
+	color: #c62700; /* c62700 ffd700 */
+} 
+
+#nav-list li a:hover#site-name, #nav-list li a:hover#site-name-code { color: #191c1f; }
 
 /* #social-media a { color: #191c1f; text-decoration: none; } */
 
@@ -265,7 +271,7 @@ strong { font-weight: bold; }
 .box1 a, .box2 a, .box3 a { 
 	float: left; 
 	width: 160px; 
-	height: 160px; 
+	height: 202px; 
 	margin: 0 8px 8px 0; 
 	padding: 0.5em 4px 0 4px; 
 }
@@ -273,7 +279,7 @@ strong { font-weight: bold; }
 .box1y a, .box2y a, .box3y a { 
 	float: left; 
 	width: 160px; 
-	height: 160px; 
+	height: 202px; 
 	margin: 0 0 8px 0; 
 	padding: 0.5em 4px 0 4px; 
 }

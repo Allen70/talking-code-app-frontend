@@ -7,6 +7,7 @@ const questionURL = `${baseURL}` + 'questions/'
 const responsesURL = `${baseURL}` + 'responses/'
 const responseRecordURL = `${baseURL}` + 'response_records/'
 const $questionContainer = document.querySelector('.question-container')
+const $defaultResponse = document.querySelector('.default-response')
 const $responseContainer = document.querySelector('.response-container')
 
 // Question copy/text
@@ -14,9 +15,16 @@ fetch(`${questionURL}${questionId}`)
     .then(response => response.json())
     .then(result => {
         const question = result.question
+        
         const $questionText = document.createElement('p')
         $questionText.textContent = question.text
         $questionContainer.append($questionText)
+
+        const $questionDefault = document.createElement('p')
+        $questionDefault.innerHTML = `
+            <p>${question.default}</p>
+        `
+        $defaultResponse.append($questionDefault)
     })
 
 function createResponseCards() {
@@ -31,7 +39,7 @@ function createResponseCards() {
                 const $deleteButton = document.createElement('button')
 
                 $responseCard.classList = 'response-card' // CSS selector
-                $responseText.innerHTML = `<p>Default response: ${response.text}</p>`
+                $responseText.innerHTML = `<p>${response.text}</p>`
                 $editButton.textContent = 'Edit'
                 $editButton.classList = 'edit-button' // CSS selector
                 $editButton.addEventListener('click', (event) => {
